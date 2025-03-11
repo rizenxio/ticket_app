@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('payment_logs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('order_id')->constrained();
+            $table->string('midtrans_transaction_id')->nullable();
+            $table->string('payment_type')->nullable();
+            $table->decimal('gross_amount', 10, 2)->nullable();
+            $table->string('transaction_status')->nullable();
+            $table->timestamp('transaction_time')->nullable();
+            $table->json('payment_details')->nullable();
+            $table->timestamps(); 
         });
     }
 

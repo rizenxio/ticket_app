@@ -12,9 +12,10 @@
                         Menu
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#""
+                        <a class="nav-link" href="{{ route('events.index') }}"
+                        
                             aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i
-                                class="fa fa-fw fa-user-circle"></i>Dashboard</a>
+                                class="fa fa-fw fa-user-circle"></i>Event</a>
 
                     </li>
                     <li class="nav-item">

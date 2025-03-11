@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('venue');
+            $table->date('event_date');
+            $table->time('event_time');
+            $table->integer('total_seats');
+            $table->integer('available_seats');
+            $table->decimal('price', 10, 2);
+            $table->enum('status', ['draft', 'published', 'cancelled'])->default('draft');
             $table->timestamps();
         });
     }

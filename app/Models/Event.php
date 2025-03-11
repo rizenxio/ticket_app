@@ -16,6 +16,7 @@ class Event extends Model
         'available_seats',
         'price',
         'status',
+        'images'
     ];
 
     protected $casts = [

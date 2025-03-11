@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('event_id')->constrained();
+            $table->foreignId('ticket_category_id')->constrained();
+            $table->integer('quantity');
+            $table->decimal('price_per_ticket', 10, 2);
+            $table->decimal('subtotal', 10, 2);
             $table->timestamps();
+
         });
     }
 
